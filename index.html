@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ยินดีต้อนรับสู่สมัครงานออนไลน์</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            text-align: center;
+            color: #fff;
+            overflow: hidden; /* ป้องกันการเลื่อนขณะทำการเปลี่ยนหน้า */
+            position: relative; /* ตั้งตำแหน่งให้เป็น relative เพื่อใช้กับ pseudo-element */
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.2); 
+            border-radius: 15px; 
+            padding: 40px; 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); 
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 14px 24px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #6e8efb;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background-color: #5a7bd8;
+        }
+        /* เพิ่มการเคลื่อนไหวเลื่อน */
+        .fade-out {
+            animation: fadeOut 0.5s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ยินดีต้อนรับสู่สมัครงานออนไลน์</h1>
+        <a href="#" class="button" id="nextButton">กดที่นี่</a>
+    </div>
+
+    <script>
+        document.getElementById("nextButton").addEventListener("click", function(event) {
+            event.preventDefault(); 
+            const targetUrl = "application_form.html"; 
+            document.body.classList.add("fade-out"); // เพิ่มคลาส fade-out เพื่อเริ่มการอนิเมชั่น
+            setTimeout(() => {
+                window.location.href = targetUrl; // เปลี่ยนหน้าเมื่อการอนิเมชั่นเสร็จสิ้น
+            }, 500); 
+        });
+    </script>
+</body>
+</html>
